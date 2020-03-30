@@ -26,6 +26,47 @@
  <body>
 	 
  <script>
+	 
+	 
+	 
+
+	 	
+function offeredOrNot(data, eventInfo){
+	
+	console.log("data --> " + JSON.stringify(data));
+	console.log("eventInfo --> " + JSON.stringify(eventInfo));
+	
+	/****
+	console.log("offered");
+	setTimeout(function(){
+		if($(".LPMcontainer").find('div.zoom').length !== 0){
+			$(".LPMcontainer").addClass( "move" );
+		}
+		if($(".LPMcontainer").find('div.zoommobile').length !== 0){
+			$(".LPMcontainer").addClass( "movemobile" );
+		}
+	}, 1000);
+			   
+	setTimeout(function(){
+		if($(".LPMcontainer").find('div.zoom').length !== 0){
+			$(".LPMcontainer").removeClass( "zoom" );
+			$(".LPMcontainer").removeClass( "move" );
+			$(".LPMcontainer").addClass( "fix" );
+			$(".LPMcontainer").addClass( "beat" );
+		}
+		if($(".LPMcontainer").find('div.zoommobile').length !== 0){
+			$(".LPMcontainer").removeClass( "zoommobile" );
+			$(".LPMcontainer").removeClass( "movemobile" );
+			$(".LPMcontainer").addClass( "fixmobile" );
+			$(".LPMcontainer").addClass( "beatmobile" );
+		}
+	}, 5000);
+	
+	
+	***/
+		
+}	
+
 	
  
 	 
@@ -56,6 +97,13 @@ window.onload = function() {
 	
 	authenticate();
 	console.log("inside1");
+	lpTag.events.bind({
+		eventName : "*",
+		appName : "*",
+		func: offeredOrNot,
+		triggerOnce : false
+	});
+
 
 }
   
