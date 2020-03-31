@@ -29,6 +29,108 @@
 	 
 	 
 	 
+	 function checkFirstMessage(myMessagetoCheck) { 
+  
+
+  var myTransformed = myMessagetoCheck.toUpperCase();
+  
+  var array1 = ["1","ABCom","oferten","njishin","paren","oferta","abkom","nje","njesh",
+               "njish"];
+  var array2 = ["2","rimbush","Rimbushje Online","Rimbushja Online","hedh leke","hedh lek","dyshin","te dyten","second",
+                "dy","dysh"];
+  var array3 = ["3","Next","pagese fature","paguaj faturen","treten","third",
+               "three","tresh"," tre "];
+  var array4 = ["4","internet","dhurate","MB falas","mb","bonus","mega","giga",
+               "katra","katren","kater"];
+  var array5 = ["5","agjent","dua te lidhem","me lidh","pesen","pesa","pese",
+               "pesten","pesta"];
+  
+  
+  var check1 = false;
+  var check2 = false;
+  var check3 = false;
+  var check4 = false;
+  var check5 = false;
+  
+  var totalCheck = 0;
+  
+  var arrayLength = array1.length;
+  for (var a = 0; a < arrayLength; a++){
+    var transformElement = array1[a].toUpperCase();
+    if (myTransformed.indexOf(transformElement) > -1){
+      check1 = true;
+      totalCheck ++;
+      a = arrayLength;
+    }
+  }
+  
+  
+  var arrayLength = array2.length;
+  for (var a = 0; a < arrayLength; a++){
+    var transformElement = array2[a].toUpperCase();
+    if (myTransformed.indexOf(transformElement) > -1){
+      check2 = true;
+      totalCheck ++;
+      a = arrayLength;
+    }
+  }
+  
+  if(totalCheck < 2){
+    var arrayLength = array3.length;
+    for (var a = 0; a < arrayLength; a++){
+      var transformElement = array3[a].toUpperCase();
+      if (myTransformed.indexOf(transformElement) > -1){
+        check3 = true;
+        totalCheck ++;
+        a = arrayLength;
+      }
+    }
+  }
+  
+  
+  if(totalCheck < 2){
+    var arrayLength = array4.length;
+    for (var a = 0; a < arrayLength; a++){
+      var transformElement = array4[a].toUpperCase();
+      if (myTransformed.indexOf(transformElement) > -1){
+        check4 = true;
+        totalCheck ++;
+        a = arrayLength;
+      }
+    }
+  }
+  
+  if(totalCheck < 2){
+    var arrayLength = array5.length;
+    for (var a = 0; a < arrayLength; a++){
+      var transformElement = array5[a].toUpperCase();
+      if (myTransformed.indexOf(transformElement) > -1){
+        check5 = true;
+        totalCheck ++;
+        a = arrayLength;
+      }
+    }
+  }
+  
+
+  if((totalCheck === 2) || check5){
+    console.log("escalation");
+  } else if (check1){
+   console.log("first"); 
+  } else if(check2){
+    console.log("second"); 
+  } else if (check3){
+    console.log("third");  
+  } else if (check4){
+    console.log("fourth");  
+  } else {
+    console.log("escalation");  
+  }
+  
+}
+
+
+	 
 
 	 	
 function offeredOrNot(data, eventInfo){
